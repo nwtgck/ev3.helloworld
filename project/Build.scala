@@ -12,9 +12,12 @@ object Build extends Build {
     licenses := Seq(("Apache License, Version 2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))),
     scalacOptions := Seq("-encoding", "UTF-8", "-unchecked", "-deprecation", "-feature"),
     mainClass in assembly := Some("com.github.t3hnar.ev3.example.HelloWorld"),
-    libraryDependencies += jna)
+    libraryDependencies += jna,
+    // https://mvnrepository.com/artifact/com.github.bdeneuter/lejos-ev3-api
+    libraryDependencies += "com.github.bdeneuter" % "lejos-ev3-api" % "0.9.1-beta"
+  )
 
-  lazy val ev3Home = Properties.envOrNone("EV3_HOME") getOrElse sys.error("$EV3_HOME environment variable is not defined")
+//  lazy val ev3Home = Properties.envOrNone("EV3_HOME") getOrElse sys.error("$EV3_HOME environment variable is not defined")
 
   lazy val jna = "net.java.dev.jna" % "jna" % "3.2.7" % "provided"
 
@@ -24,7 +27,7 @@ object Build extends Build {
     file("."),
     settings = defaultSettings ++ basicSettings ++ assemblySettings)
     .settings(
-      unmanagedBase := file(ev3Home) / "lib" / "ev3",
+//      unmanagedBase := file(ev3Home) / "lib" / "ev3",
       exportJars := true,
       jarName in assembly := "helloworld.jar",
       excludedJars in assembly <<= unmanagedJars in Compile)
