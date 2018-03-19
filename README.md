@@ -1,6 +1,7 @@
 # EV3 Hello World
+[![Build Status](https://travis-ci.org/nwtgck/ev3.helloworld.svg?branch=master)](https://travis-ci.org/nwtgck/ev3.helloworld)
 
-[LEGO Mindstorms EV3](http://www.lego.com/en-us/mindstorms/products/ev3/31313-mindstorms-ev3/) Hello World in Scala
+[LEGO Mindstorms EV3](https://www.lego.com/en-us/mindstorms/products/mindstorms-ev3-31313) Hello World in Scala
 
 <table border="0">
   <tr>
